@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 20px; }
+        input { width: 80%; padding: 15px; font-size: 20px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #ccc; }
+        button { padding: 15px 30px; font-size: 18px; background-color: #28a745; color: white; border: none; border-radius: 8px; }
+        #resultado { margin-top: 30px; font-size: 24px; font-weight: bold; color: #333; }
+    </style>
+</head>
+<body>
+    <h2>Calculadora de Luz</h2>
+    <input type="number" id="monto" placeholder="Monto total ($)">
+    <br>
+    <button onclick="calcular()">Calcular por Inquilino</button>
+    <div id="resultado"></div>
+
+    <script>
+        function calcular() {
+            let total = document.getElementById('monto').value;
+            if(total) {
+                let division = (total / 3).toLocaleString('es-AR', { style: 'currency', currency: 'ARS' });
+                document.getElementById('resultado').innerHTML = "Cada uno paga: <br>" + division;
+            }
+        }
+    </script>
+</body>
+</html>
